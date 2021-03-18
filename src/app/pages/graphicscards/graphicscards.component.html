@@ -1,0 +1,126 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+        <a mat-list-item routerLink="/pages/processors">Processors</a>
+        <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a routerLink="/">OutOfStock.com</a>
+
+      <mat-icon>shopping_cart</mat-icon>
+      </mat-toolbar>
+
+        <mat-toolbar class="link-bar">
+          <div class="items">
+            <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+            <a mat-list-item routerLink="/pages/processors">Processors</a>
+            <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <div class="container">
+          <div class="filter">
+            <mat-selection-list #shoes>
+              <mat-list-option *ngFor="let shoe of typesOfShoes">
+                {{shoe}}
+              </mat-list-option>
+            </mat-selection-list>
+            
+            <p>
+              Options selected: {{shoes.selectedOptions.selected.length}}
+            </p>
+            <button (click)="graphics1show()"></button>
+        </div>
+        <div *ngIf="graphics1" class="products">
+            <mat-card class="main-card-6800xt">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/xfx6800xt.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>XFX RadeonRX 6800 XT speedster MERC 319 </mat-card-title>
+                <p>
+                  Grafikkort, AMD Radeon RX 6800 XT Overclocked, Core clock 1900 MHz / Boost clock 2340 MHz, 4608 Stream kerner, 16 GB GDDR6 
+                </p>
+                <div class="card-action">
+                  <mat-card-title>8699,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/graphics6800xt">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card-3080">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/3080.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>ASUS GeForce RTX 3080 TUF OC - 10GB </mat-card-title>
+                <p>
+                  Grafikkort, NVIDIA GeForce RTX 3080 Overclocked (Core clock 1440 MHz / Boost clock 1815 MHz), 8704 CUDA kerner, 10 GB GDDR6X (Memory clock 19.5 GHz)
+                <div class="card-action">
+                  <mat-card-title>8890,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/graphics3080">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card-6800">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/6800.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>MSI Radeon RX 6800 GAMING X TRIO - 16GB  </mat-card-title>
+                <p>
+                  Grafikkort, AMD Radeon RX 6800 Overclocked (Core clock 1700 MHz / Boost clock 2155 MHz), 3840 Stream kerner, 16 GB GDDR6
+                </p>
+                <div class="card-action">
+                  <mat-card-title>6990,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/graphics6800">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card-3070">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/3070.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>ASUS GeForce RTX 3070 ROG STRIX OC - 8GB GDDR6 RAM  </mat-card-title>
+                <p>
+                  Grafikkort, NVIDIA GeForce RTX 3070 Overclocked (Core clock 1500 MHz / Boost clock 1935 MHz), 5588 CUDA kerner, 8 GB GDDR6 (Memory clock 14 GHz)
+                </p>
+                <div class="card-action">
+                  <mat-card-title>7190,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/graphics3070">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+        </div>
+    </div>
+    <main-footer></main-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

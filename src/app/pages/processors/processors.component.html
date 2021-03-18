@@ -1,0 +1,129 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+        <a mat-list-item routerLink="/pages/processors">Processors</a>
+        <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a routerLink="/">OutOfStock.com</a>
+
+      <mat-icon>shopping_cart</mat-icon>
+      </mat-toolbar>
+
+        <mat-toolbar class="link-bar">
+          <div class="items">
+            <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+            <a mat-list-item routerLink="/pages/processors">Processors</a>
+            <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <div class="container">
+          <div class="filter">
+            <mat-selection-list #shoes>
+              <mat-list-option *ngFor="let shoe of typesOfShoes">
+                {{shoe}}
+              </mat-list-option>
+            </mat-selection-list>
+            
+            <p>
+              Options selected: {{shoes.selectedOptions.selected.length}}
+            </p>
+        </div>
+        <div class="products">
+          <mat-card class="main-card">
+            <div class="picture">
+              <img class="image" mat-card-image src="/assets/5950x.png" alt="Photo of a Shiba Inu">
+            </div>
+            <div class="text">
+              <mat-card-title>AMD Ryzen 9 5950X </mat-card-title>
+              <p>
+                Processor (CPU), 3.4 GHz (4.9 GHz Turbo), Unlocked (kan overclockes), 16 kerner (Hexadeca Core), 32 tråde, 72 MB cache, 
+                105 watt TDP, - Zen 3
+              </p>
+              <div class="card-action">
+                <mat-card-title>6399,-</mat-card-title>
+                <div class="buy-button">
+                  <button mat-raised-button color="accent" routerLink="/pages/products/processor5950x">Køb</button>
+              </div>
+            </div>
+            </div>
+          </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="/assets/5900x.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>AMD Ryzen 9 5900X </mat-card-title>
+                <p>
+                    Processor (CPU), 3.7 GHz (4.8 GHz Turbo), Unlocked, 12 kerner , 24 tråde, 70 MB cache, 
+                    AM4 Socket, 105 watt TDP, Box - Zen 3
+                </p>
+                <div class="card-action">
+                  <mat-card-title>4399,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/processor5900x">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="/assets/5800x.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>AMD Ryzen 7 5800X</mat-card-title>
+                <p>
+                  Processor (CPU), 3.8 GHz (4.7 GHz Turbo), Unlocked (kan overclockes), 8 kerner (Octa Core), 
+                  16 tråde, 36 MB cache, AM4 Socket, - Zen 3
+                </p>
+                <div class="card-action">
+                  <mat-card-title>3599,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/processor5800x">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="/assets/5600x.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>AMD Ryzen 5 5600X </mat-card-title>
+                <p>
+                  Processor (CPU), 3.7 GHz (4.6 GHz Turbo), Unlocked (kan overclockes), 6 kerner (Hexa Core), 12 tråde, 32 MB cache, 
+                  65 watt TDP, - Zen 3
+                </p>
+                <div class="card-action">
+                  <mat-card-title>2399,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/processor5600x">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+        </div>
+      </div>
+    <main-footer></main-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

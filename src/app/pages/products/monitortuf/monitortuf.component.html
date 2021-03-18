@@ -1,0 +1,83 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+        <a mat-list-item routerLink="/pages/processors">Processors</a>
+        <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a routerLink="/">OutOfStock.com</a>
+  
+      <mat-icon>shopping_cart</mat-icon>
+      </mat-toolbar>
+  
+        <mat-toolbar class="link-bar">
+          <div class="items">
+            <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+            <a mat-list-item routerLink="/pages/processors">Processors</a>
+            <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+        </div>
+      </mat-toolbar>
+        <!-- Add Content Here -->
+        <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+        <mat-toolbar *ngIf="errorMsg" color="ward">{{ errorMsg }}</mat-toolbar>
+        <div class="page-container">
+          <div class="product-image">
+            <mat-card class="front_card">
+              <mat-card-content>
+                <mat-card-title>ASUS 24" Skærm TUF Gaming VG249Q1R - Sort - 1 ms </mat-card-title>
+              </mat-card-content>
+              <img mat-card-image src="assets/asustuf.png" alt="Photo of a Shiba Inu">
+            </mat-card>
+          </div>
+          <div class="form-container">
+            <form (submit)="createBookings()">
+              <mat-form-field>
+                <input [(ngModel)]="productName" name="productName" matInput  placeholder="TUF Gaming" >
+              </mat-form-field>
+              <mat-form-field>
+                <input [(ngModel)]="customerName" name="customerName" matInput placeholder="Name">
+              </mat-form-field>
+              <mat-form-field>
+                <input [(ngModel)]="email" name="email" matInput placeholder="email">
+              </mat-form-field>
+              <button mat-raised-button color="primary">Book Product</button>
+            </form>
+          </div>
+      </div>
+      <div class="page-container-2">
+        <!-- Product Name -->
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="specName">
+            <th mat-header-cell *matHeaderCellDef> specifikationer </th>
+            <td mat-cell *matCellDef="let element"> {{element.specName}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+  
+      <main-footer></main-footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  

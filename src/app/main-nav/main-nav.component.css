@@ -1,0 +1,64 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+mat-toolbar a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.front_card {
+  margin: 5px;
+  width: 400px;
+}
+
+.front_card_2 {
+  margin: 5px;
+  width: 400px;
+}
+
+.front_card_3 {
+  margin: 5px;
+  width: 400px;
+}
+
+.main-content {
+  margin: 10px;
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mat-toolbar a{
+    display: none;
+  }
+}
+

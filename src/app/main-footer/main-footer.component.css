@@ -1,0 +1,20 @@
+.toolbar_1 {
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.toolbar_2 {
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.toolbar_3 a{
+    margin: 0 auto;
+}
+
+.mat-toolbar {
+    bottom: 0;
+}
+

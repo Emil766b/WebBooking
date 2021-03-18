@@ -1,0 +1,107 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar {
+  justify-content: space-between;
+}
+
+mat-toolbar a {
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.link-bar {
+  background: #0c0078;
+}
+
+.items {
+  margin: 0 auto;
+}
+
+.filter {
+    width: 150px;
+
+}
+
+.products {
+    margin-left: auto;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 30px;
+    
+}
+
+.main-card {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+.image {
+  width: 250px;
+}
+
+.text {
+  margin-left: 250px;
+  width: 30%;
+}
+
+.card-action {
+  display: flex;
+  flex-flow: row wrap;  
+  margin: 0 auto;
+}
+
+.buy-button {
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .link-bar {
+    display: none;
+  }
+
+  .main-card {
+    margin: 2 auto;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .text {
+    margin: 0 auto;
+    width: 70%;
+  }
+}

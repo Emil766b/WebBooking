@@ -1,0 +1,108 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+        <a mat-list-item routerLink="/pages/processors">Processors</a>
+        <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a routerLink="/">OutOfStock.com</a>
+
+      <mat-icon>shopping_cart</mat-icon>
+      </mat-toolbar>
+
+        <mat-toolbar class="link-bar">
+          <div class="items">
+            <a mat-list-item routerLink="/pages/graphicscards">Graphics Cards</a>
+            <a mat-list-item routerLink="/pages/processors">Processors</a>
+            <a mat-list-item routerLink="/pages/monitors">Monitors</a>
+        </div>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <div class="container">
+          <div class="filter">
+            <mat-selection-list #shoes>
+              <mat-list-option *ngFor="let shoe of typesOfShoes">
+                {{shoe}}
+              </mat-list-option>
+            </mat-selection-list>
+            
+            <p>
+              Options selected: {{shoes.selectedOptions.selected.length}}
+            </p>
+        </div>
+        <div class="products">
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/asustuf.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>ASUS 24" Skærm TUF Gaming VG249Q1R - Sort - 1 ms </mat-card-title>
+                <p>
+                  LED-skærm, 23.8", 1920 x 1080 Full HD (1080p) @ 165 Hz, IPS, 250 cd/m², 1000:1, 1 ms, 2xHDMI, DisplayPort, højtalere 
+                </p>
+                <div class="card-action">
+                  <mat-card-title>1590,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/monitortuf">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/asusrog.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>ASUS 25" Skærm ROG Swift PG259QN 360Hz IPS - Sort - 1 ms NVIDIA G-SYNC </mat-card-title>
+                <p>
+                  LED-skærm, 24.5", 1920 x 1080 Full HD (1080p) @ 360 Hz, IPS, 400 cd/m², 1 ms, HDMI, DisplayPort
+                </p>
+                <div class="card-action">
+                  <mat-card-title>5690,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/monitorrog">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/samsungc27.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>Samsung 27" Skærm C27F396FHU - Sort - 4 ms AMD FreeSync </mat-card-title>
+                <p>
+                  CF396 Series, LED-skærm, kurvet, 27", 1920 x 1080 Full HD (1080p), VA, 250 cd/m², 3000:1, 4 ms, HDMI, VGA, skinnende sort
+                </p>
+                <div class="card-action">
+                  <mat-card-title>1299,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/pages/products/monitorc27">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+        </div>
+    </div>
+    <main-footer></main-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

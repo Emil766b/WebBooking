@@ -1,0 +1,103 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/products">Graphics Cards</a>
+        <a mat-list-item routerLink="/products">Processors</a>
+        <a mat-list-item routerLink="/products">Monitors</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <a routerLink="/">OutOfStock.com</a>
+        <div class="items">
+          <a mat-list-item routerLink="/products">Graphics Cards</a>
+          <a mat-list-item routerLink="/products">Processors</a>
+          <a mat-list-item routerLink="/products">Monitors</a>
+      </div>
+      <mat-icon>shopping_cart</mat-icon>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <div class="container">
+          <div class="filter">
+            <mat-selection-list #shoes [multiple]="false">
+                <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+                {{shoe}}
+                </mat-list-option>
+            </mat-selection-list>
+            <p>
+                Option selected: {{shoes.selectedOptions.selected[0]?.value}}
+            </p>
+        </div>
+        <div class="products">
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/xfx6800xt.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>XFX RadeonRX 6800 XT speedster MERC 319 </mat-card-title>
+                <p>
+                  Grafikkort, AMD Radeon RX 6800 XT Overclocked, Core clock 1900 MHz / Boost clock 2340 MHz, 4608 Stream kerner, 16 GB GDDR6 
+                </p>
+                <div class="card-action">
+                  <mat-card-title>7500,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/booking">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/xfx6800xt.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>XFX RadeonRX 6800 XT speedster MERC 319 </mat-card-title>
+                <p>
+                  Grafikkort, AMD Radeon RX 6800 XT Overclocked, Core clock 1900 MHz / Boost clock 2340 MHz, 4608 Stream kerner, 16 GB GDDR6 
+                </p>
+                <div class="card-action">
+                  <mat-card-title>7500,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/booking">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+            <mat-card class="main-card">
+              <div class="picture">
+                <img class="image" mat-card-image src="assets/xfx6800xt.png" alt="Photo of a Shiba Inu">
+              </div>
+              <div class="text">
+                <mat-card-title>XFX RadeonRX 6800 XT speedster MERC 319 </mat-card-title>
+                <p>
+                  Grafikkort, AMD Radeon RX 6800 XT Overclocked, Core clock 1900 MHz / Boost clock 2340 MHz, 4608 Stream kerner, 16 GB GDDR6 
+                </p>
+                <div class="card-action">
+                  <mat-card-title>7500,-</mat-card-title>
+                  <div class="buy-button">
+                    <button mat-raised-button color="accent" routerLink="/booking">Køb</button>
+                </div>
+              </div>
+              </div>
+            </mat-card>
+
+        </div>
+    </div>
+    <main-footer></main-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
